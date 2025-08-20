@@ -1,0 +1,45 @@
+# src/main/resources/application-dev.yml
+spring:
+  datasource:
+    url: jdbc:h2:mem:filcon_dev
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: password
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${GMAIL_USERNAME:your-email@gmail.com}
+    password: ${GMAIL_APP_PASSWORD:your-app-password}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+filcon:
+  email:
+    from: ${GMAIL_USERNAME:filconelectronics@gmail.com}
+    to: filconelectronics@gmail.com,purchase@filconelectronics.co.in
+    rate-limit:
+      max-submissions: 3
+      time-window-hours: 24
+
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE

@@ -1,0 +1,27 @@
+# src/main/resources/application.yml
+spring:
+  profiles:
+    active: dev
+  application:
+    name: filcon-electronics-backend
+
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when-authorized
+
+logging:
+  level:
+    com.filcon.electronics: INFO
+    org.springframework.security: DEBUG
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
