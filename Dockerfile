@@ -14,8 +14,8 @@ COPY src ./src
 # Package the application, skipping tests
 RUN mvn clean package -DskipTests
 
-# Stage 2: Create the final, smaller runtime image
-FROM openjdk:17-jre-slim
+# Replace the old line with this new one
+FROM eclipse-temurin:17-jre-jammy
 
 WORKDIR /app
 
