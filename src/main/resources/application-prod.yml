@@ -1,0 +1,89 @@
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/filcon_db?useSSL=true&serverTimezone=Asia/Kolkata}
+    username: ${DB_USERNAME:filcon_user}
+    password: ${DB_PASSWORD:your_password}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: false
+        use_sql_comments: false
+        jdbc:
+          batch_size: 20
+        order_inserts: true
+        order_updates: true
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+  mail:
+    host: ${SMTP_HOST:smtp.gmail.com}
+    port: ${SMTP_PORT:587}
+    username: kishor.hitnalli@gmail.com
+    password: ${GMAIL_APP_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          connection-timeout: 5000
+          timeout: 5000
+          write-timeout: 5000
+
+server:
+  port: ${SERVER_PORT:8080}
+  tomcat:
+    max-threads: 200
+    accept-count: 100
+    max-connections: 8192
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain,text/css,text/javascript,application/javascript
+    min-response-size: 1024
+
+filcon:
+  email:
+    from: ${GMAIL_USERNAME:filconelectronics@gmail.com}
+    to: kishor.hitnalli@gmail.com
+    rate-limit:
+      max-submissions: 5
+      time-window-hours: 24
+  cors:
+    allowed-origins: ${ALLOWED_ORIGINS:https://filconelectronics.com,https://www.filconelectronics.com}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: when-authorized
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
+logging:
+  level:
+    com.filcon.electronics: INFO
+    org.springframework.security: WARN
+    org.hibernate.SQL: WARN
+    org.springframework.mail: INFO
+  pattern:
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    name: logs/filcon-backend.log
+    max-size: 10MB
+    max-history: 30

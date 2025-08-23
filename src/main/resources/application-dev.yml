@@ -22,8 +22,9 @@ spring:
   mail:
     host: smtp.gmail.com
     port: 587
-    username: ${GMAIL_USERNAME:your-email@gmail.com}
-    password: ${GMAIL_APP_PASSWORD:your-app-password}
+    username: kishor.hitnalli@gmail.com
+    password: ${GMAIL_APP_PASSWORD}
+
     properties:
       mail:
         smtp:
@@ -34,7 +35,7 @@ spring:
 filcon:
   email:
     from: ${GMAIL_USERNAME:filconelectronics@gmail.com}
-    to: filconelectronics@gmail.com,purchase@filconelectronics.co.in
+    to: kishor.hitnalli@gmail.com
     rate-limit:
       max-submissions: 3
       time-window-hours: 24
