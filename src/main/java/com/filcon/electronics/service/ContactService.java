@@ -53,8 +53,7 @@ public class ContactService {
         inquiry.setEmail(dto.getEmail().trim().toLowerCase());
         inquiry.setPhone(dto.getPhone().trim());
         inquiry.setCompanyName(dto.getCompanyName() != null ? dto.getCompanyName().trim() : null);
-        inquiry.setProductInterest(dto.getProductInterest());
-        inquiry.setMessage(dto.getMessage().trim());
+
         inquiry.setIpAddress(ipAddress);
         inquiry.setStatus(ContactInquiry.InquiryStatus.NEW);
 
