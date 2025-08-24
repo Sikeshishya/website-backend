@@ -35,9 +35,7 @@ public class ContactInquiry {
     @Column(name = "company_name", length = 255)
     private String companyName;
 
-    @Enumerated(EnumType.STRING)
-    @Column(name = "product_interest")
-    private ProductInterest productInterest;
+
 
     @Column(name = "message", nullable = false, columnDefinition = "TEXT")
     private String message;
@@ -53,24 +51,7 @@ public class ContactInquiry {
     @Column(name = "ip_address", length = 45)
     private String ipAddress;
 
-    public enum ProductInterest {
-        AUTOMOTIVE("Automotive Capacitors"),
-        POLYESTER("Metallised Polyester"),
-        POLYPROPYLENE("Metallised Polypropylene"),
-        HIGH_VOLTAGE("High Voltage Capacitors"),
-        LED_SOLAR("LED & Solar Lighting"),
-        OTHER("Other");
 
-        private final String displayName;
-
-        ProductInterest(String displayName) {
-            this.displayName = displayName;
-        }
-
-        public String getDisplayName() {
-            return displayName;
-        }
-    }
 
     public enum InquiryStatus {
         NEW, IN_PROGRESS, RESPONDED, CLOSED

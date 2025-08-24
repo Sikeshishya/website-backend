@@ -28,9 +28,5 @@ public class ContactFormDTO {
     @Size(max = 255, message = "Company name cannot exceed 255 characters")
     private String companyName;
 
-    private ContactInquiry.ProductInterest productInterest;
 
-    @NotBlank(message = "Message is required")
-    @Size(min = 10, max = 2000, message = "Message must be between 10 and 2000 characters")
-    private String message;
 }

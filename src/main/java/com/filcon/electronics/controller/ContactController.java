@@ -45,13 +45,7 @@ public class ContactController {
         }
     }
 
-    @GetMapping("/product-interests")
-    public ResponseEntity<ApiResponseDTO<ContactInquiry.ProductInterest[]>> getProductInterests() {
-        return ResponseEntity.ok(ApiResponseDTO.success(
-                "Product interests retrieved successfully",
-                ContactInquiry.ProductInterest.values()
-        ));
-    }
+
 
     private String getClientIpAddress(HttpServletRequest request) {
         String xForwardedFor = request.getHeader("X-Forwarded-For");
