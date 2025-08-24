@@ -15,9 +15,7 @@ public class EmailTemplateUtil {
         return inquiry.getCreatedAt().format(DATE_FORMATTER);
     }
 
-    public String getProductInterestDisplay(ContactInquiry.ProductInterest productInterest) {
-        return productInterest != null ? productInterest.getDisplayName() : "Not specified";
-    }
+
 
     public String formatPhoneNumber(String phone) {
         // Simple formatting for Indian phone numbers
