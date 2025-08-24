@@ -55,7 +55,7 @@ server:
 filcon:
   email:
     from: ${GMAIL_USERNAME:filconelectronics@gmail.com}
-    to: kishor.hitnalli@gmail.com
+    to: kishor.hitnalli@gmail.com,filconelectronics@gmail.com
     rate-limit:
       max-submissions: 5
       time-window-hours: 24
