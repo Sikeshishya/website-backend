@@ -54,6 +54,11 @@ public class ContactService {
         inquiry.setPhone(dto.getPhone().trim());
         inquiry.setCompanyName(dto.getCompanyName() != null ? dto.getCompanyName().trim() : null);
 
+        // --- THIS IS THE FIX ---
+        // Get the message from the DTO and set it on the entity
+        inquiry.setMessage(dto.getMessage().trim());
+        // -----------------------
+
         inquiry.setIpAddress(ipAddress);
         inquiry.setStatus(ContactInquiry.InquiryStatus.NEW);
 
