@@ -54,7 +54,7 @@ server:
 
 filcon:
   email:
-    from: ${GMAIL_USERNAME:filconelectronics@gmail.com}
+    from: ${GMAIL_USERNAME:kishor.hitnalli@gmail.com}
     to: kishor.hitnalli@gmail.com,filconelectronics@gmail.com
     rate-limit:
       max-submissions: 5
