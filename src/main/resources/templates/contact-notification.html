@@ -182,16 +182,7 @@
             <div class="info-value" th:text="${inquiry.companyName}">Company Name</div>
         </div>
 
-        <div class="info-grid" th:if="${inquiry.productInterest}">
-            <div class="info-label">Product Interest:</div>
-            <div class="info-value">
-                <span th:text="${inquiry.productInterest.displayName}">Product</span>
-                <span class="badge"
-                      th:classappend="${inquiry.productInterest.name() == 'AUTOMOTIVE'} ? 'badge-automotive' : 'badge-other'">
-                        Priority
-                    </span>
-            </div>
-        </div>
+
 
         <div class="info-grid" th:if="${inquiry.ipAddress}">
             <div class="info-label">IP Address:</div>
